@@ -30,6 +30,28 @@ proxy.invoke('getUserByLoginCookie', [argObj], function (err, reply) {
 
 
 
+// var argObj = {
+//     "companyId":2,
+//     "data":{
+//         "id":520
+//     }
+//
+// };
+//
+//
+// var proxy = new Proxy('http://localhost:8080/ouser-service/ouserService/userService', '', '', proxy);
+// argObj.__type__ = 'com.odianyun.soa.InputDTO';
+// argObj.data.__type__='com.odianyun.user.dto.DTO.UserInDTO';
+//
+// proxy.invoke('getUserByConditions', [argObj], function (err, reply) {
+//     if (err) {
+//         console.info('test2: ' + err);
+//     }
+//     console.info(reply);
+//     console.info('test2: ' + JSON.stringify(reply));
+// })
+
+
 var argObj = {
     "companyId":2,
     "data":{
@@ -39,15 +61,14 @@ var argObj = {
 };
 
 
-var proxy = new Proxy('http://localhost:8080/ouser-service/ouserService/userService', '', '', proxy);
+var proxy = new Proxy('http://127.0.0.1:8080/test', '', '', proxy);
 argObj.__type__ = 'com.odianyun.soa.InputDTO';
-argObj.data.__type__='com.odianyun.user.dto.DTO.UserInDTO';
+argObj.data.__type__='com.zhu8fei.bean.ListBean';
 
-proxy.invoke('getUserByConditions', [argObj], function (err, reply) {
+proxy.invoke('getListBean', [argObj], function (err, reply) {
     if (err) {
         console.info('test2: ' + err);
     }
     console.info(reply);
     console.info('test2: ' + JSON.stringify(reply));
 })
-
