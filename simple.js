@@ -10,7 +10,8 @@ var banana = {
 var listBean = {
     "__type__": "com.zhu8fei.bean.ListBean",
     "banana": banana,
-    "str": "sss"
+    "str": "sss",
+    "d": 1.2
 }
 
 var inputDto = {
