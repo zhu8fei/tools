@@ -52,6 +52,9 @@ proxy.invoke('getUserByLoginCookie', [argObj], function (err, reply) {
 // })
 
 
+// 家里代码样例
+/*
+
 var argObj = {
     "companyId":2,
     "data":{
@@ -70,5 +73,17 @@ proxy.invoke('getListBean', [argObj], function (err, reply) {
         console.info('test2: ' + err);
     }
     console.info(reply);
+    console.info('test2: ' + JSON.stringify(reply));
+})
+*/
+var proxy = new Proxy('http://127.0.0.1:8080/test', '', '', proxy);
+
+proxy.invoke('getMore', [], function (err, reply) {
+    if (err) {
+        console.info('test21: ' + err);
+    }
+    console.info("start");
+    console.info(reply);
+    console.info("end");
     console.info('test2: ' + JSON.stringify(reply));
 })
