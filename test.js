@@ -59,7 +59,7 @@ var argObj = {
     "companyId":2,
     "data":{
         "id":520
-    }
+    },
 
 };
 
@@ -82,8 +82,5 @@ proxy.invoke('getMore', [], function (err, reply) {
     if (err) {
         console.info('test21: ' + err);
     }
-    console.info("start");
-    console.info(reply);
-    console.info("end");
     console.info('test2: ' + JSON.stringify(reply));
 })
