@@ -53,34 +53,34 @@ proxy.invoke('getUserByLoginCookie', [argObj], function (err, reply) {
 
 
 // 家里代码样例
-/*
+
 
 var argObj = {
     "companyId":2,
     "data":{
-        "id":520
-    },
-
+        "str":"中文"
+    }
 };
+var args =  [argObj];
+args.head = {"companyId":"10"};
 
 
-var proxy = new Proxy('http://127.0.0.1:8080/test', '', '', proxy);
+var proxy = new Proxy('http://127.0.0.1:8080/service/service/test', '', '', proxy);
 argObj.__type__ = 'com.odianyun.soa.InputDTO';
 argObj.data.__type__='com.zhu8fei.bean.ListBean';
 
-proxy.invoke('getListBean', [argObj], function (err, reply) {
+proxy.invoke('getListBean', args , function (err, reply) {
     if (err) {
         console.info('test2: ' + err);
     }
-    console.info(reply);
-    console.info('test2: ' + JSON.stringify(reply));
-})
-*/
-var proxy = new Proxy('http://127.0.0.1:8080/test', '', '', proxy);
+    console.info('result: \n\n    ' + JSON.stringify(reply));
+});
+
+/*var proxy = new Proxy('http://127.0.0.1:8080/test', '', '', proxy);
 
 proxy.invoke('getMore', [], function (err, reply) {
     if (err) {
         console.info('test21: ' + err);
     }
     console.info('test2: ' + JSON.stringify(reply));
-})
+})*/
