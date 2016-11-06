@@ -57,12 +57,13 @@ proxy.invoke('getUserByLoginCookie', [argObj], function (err, reply) {
 
 var argObj = {
     "companyId":2,
+    "traceTicket":"fromToNodeClient",
     "data":{
         "str":"中文"
     }
 };
 var args =  [argObj];
-args.head = {"companyId":"10"};
+args.head = {"companyId_":"10"};
 
 
 var proxy = new Proxy('http://127.0.0.1:8080/service/service/test', '', '', proxy);
